@@ -1,7 +1,7 @@
-import {ZodSchema} from "zod/v3";
 import { Request, Response, NextFunction } from 'express';
+import {z} from "zod";
 
-export const validateBody = (schema: ZodSchema) => {
+export const validateBody = (schema: z._ZodType) => {
     return (req: Request, res: Response, next: NextFunction) => {
         const result = schema.safeParse(req.body);
 
@@ -10,8 +10,8 @@ export const validateBody = (schema: ZodSchema) => {
                 .status(400)
                 .json({
                     success: false,
-                    errors: result.error.errors.map((err) => ({
-                        message: err.message,
+                    errors: result.error.issues.map((issue) => ({
+                        message: issue.message,
                     }))
                 });
         }

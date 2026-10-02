@@ -9,8 +9,8 @@ export const taskSchema = z.object({
     status: statusEnum,
     priority: priority,
     assignedTo: z.string().nonempty(),
-    dueDate: z.date(),
-    createdAd: z.date(),
+    dueDate: z.coerce.date(),
+    createdAd: z.coerce.date(),
 })
 
 export const taskId = z.object({
@@ -21,3 +21,5 @@ export const patchTask = z.object({
     id: taskId.shape.id,
     status: statusEnum,
 })
+
+export const combinedTaskSchema = taskSchema.merge(taskId).merge(patchTask)
