@@ -1,13 +1,13 @@
 import {z} from "zod";
 
 const statusEnum = z.enum(["todo", "in_progress", "review", "done"]);
-const priority = z.enum(["low", "medium", "high"]);
+const priorityEnum = z.enum(["low", "medium", "high"]);
 
 export const taskSchema = z.object({
     projectId: z.string().nonempty(),
     title: z.string().nonempty(),
     status: statusEnum,
-    priority: priority,
+    priority: priorityEnum,
     assignedTo: z.string().nonempty(),
     dueDate: z.coerce.date(),
     createdAd: z.coerce.date(),
