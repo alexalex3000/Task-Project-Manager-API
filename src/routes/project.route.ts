@@ -14,6 +14,7 @@ projectRouter
         validateBody(projectSchema),
         projectController.addProject
     )
+    .delete(projectController.deleteById)
 
 projectRouter
     .route("/:projectId")

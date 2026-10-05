@@ -1,5 +1,5 @@
-import { pgEnum, pgTable, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
-import { projectSchema } from "./project.schema";
+import {pgEnum, pgTable, timestamp, uuid, varchar} from "drizzle-orm/pg-core";
+import {projectSchema} from "./project.schema";
 
 export const statusEnum = pgEnum("status_enum", ["todo", "in_progress", "review", "done"]);
 export const priorityEnum = pgEnum("priority_enum", ["low", "medium", "high"]);
@@ -12,7 +12,7 @@ export const taskSchema = pgTable("task", {
     title: varchar("title", { length: 255 }).notNull(),
     status: statusEnum("status").default("todo").notNull(),
     priority: priorityEnum("priority").default("medium").notNull(),
-    assignedTo: uuid("assigned_to"),
-    dueDate: timestamp("due_date"),
+    assignedTo: uuid("assigned_to").notNull(),
+    dueDate: timestamp("due_date").notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
 });

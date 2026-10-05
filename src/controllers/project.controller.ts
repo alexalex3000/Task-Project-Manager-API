@@ -1,17 +1,24 @@
 import {NextFunction, Request, Response} from "express";
-import {z} from "zod";
-import {combinedProjectSchema} from "../schemes/project.schema";
+import {ProjectService} from "../services/project.service";
+import {ProjectType} from "../model/project.type";
 
 interface RequestParams {
-    projectId?: string;
+    projectId: string;
 }
-
-type RequestBody = z.infer<typeof combinedProjectSchema>;
 
 export class ProjectController {
     getAll = async (req: Request, res: Response, next: NextFunction) => {
         try{
-            console.log("All projects")
+            const projects = await ProjectService.getAll();
+
+            if(projects.length == 0){
+                res.json({success: false, message: "No projects found"}).status(404);
+            }
+
+            res.json({
+                success: true,
+                project: projects,
+            }).status(200);
         } catch (e){
             next(e)
         }
@@ -19,23 +26,45 @@ export class ProjectController {
 
     getById = async (req: Request<RequestParams>, res: Response, next: NextFunction) => {
         try{
-            console.log(`Get project with id: ${req.params.projectId}`)
+            const project = await ProjectService.getById(req.params.projectId)
+
+            if(!project){
+                res.json({success: false,message: "No project found."}).status(404);
+            }
+
+            res.json({
+                success: true,
+                project,
+            }).status(200);
         } catch (e){
             next(e)
         }
     }
 
-    addProject = async (req: Request<{}, {}, RequestBody>, res: Response, next: NextFunction) => {
+    addProject = async (req: Request<{}, {}, ProjectType>, res: Response, next: NextFunction) => {
         try{
-            console.log(`Add project ${req.body.title} at ${req.body.createdAt?.getTime()}`)
+            const addedProject = await ProjectService.addNewProject(req.body)
+
+            if(!addedProject){
+                throw new Error("Cant create a new project");
+            }
         } catch (e){
             next(e)
         }
     }
 
-    deleteById = async (req: Request<{}, {}, RequestBody>, res: Response, next: NextFunction) => {
+    deleteById = async (req: Request<RequestParams>, res: Response, next: NextFunction) => {
         try {
-            console.log( `Delete project with id ${req.body.id}`)
+            const deletedProject = await ProjectService.deleteProject(req.params.projectId)
+
+            if(!deletedProject){
+                throw new Error("Cant delete a project")
+            }
+
+            res.json({
+                success: true,
+                projectId: deletedProject,
+            }).status(200);
         } catch (e){
             next(e)
         }
