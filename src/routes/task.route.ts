@@ -5,10 +5,10 @@ import {patchTask, taskSchema} from "../schemes/task.schema";
 
 const taskRouter = Router({mergeParams: true});
 
-const taskController = new TaskController()
+const taskController = new TaskController();
 
 taskRouter
-    .route("/")
+    .route("/tasks")
     .get(taskController.getAllTasks)
     .post(
         validateBody(taskSchema),
@@ -29,3 +29,5 @@ taskRouter
     .delete(
         taskController.deleteTask
     )
+
+export default taskRouter;

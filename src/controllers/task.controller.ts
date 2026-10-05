@@ -3,14 +3,14 @@ import {TaskService} from "../services/task.service";
 import {Status, TaskType} from "../model/task.type";
 
 interface ReqParams{
-    projectId: string;
-    taskId: string;
+    projectId?: string;
+    taskId?: string;
 }
 
 export class TaskController {
     getAllTasks = async (req: Request<ReqParams>,res: Response,next: NextFunction) => {
         try{
-            const tasks = await TaskService.getTasks(req.params.projectId)
+            const tasks = await TaskService.getTasks(req.params.projectId!)
 
             if(tasks.length == 0){
                 res.json({
@@ -30,7 +30,7 @@ export class TaskController {
 
     addTaskTo = async (req: Request<ReqParams, {}, TaskType>, res: Response, next: NextFunction) => {
         try{
-            const task = await TaskService.addTask(req.body, req.params.projectId);
+            const task = await TaskService.addTask(req.body, req.params.projectId!);
 
             if(!task){
                 res.json({
@@ -50,7 +50,7 @@ export class TaskController {
 
     getTask = async (req: Request<ReqParams>, res: Response, next: NextFunction) => {
         try{
-            const task = await TaskService.getTaskById(req.params.taskId, req.params.projectId);
+            const task = await TaskService.getTaskById(req.params.taskId!, req.params.projectId!);
 
             if(!task){
                 res.json({
@@ -70,7 +70,7 @@ export class TaskController {
 
     changeStatus = async (req: Request<ReqParams, {}, {status: Status}>, res: Response, next: NextFunction) => {
         try{
-            const task = await TaskService.changeTaskStatus(req.body.status, req.params.taskId, req.params.projectId);
+            const task = await TaskService.changeTaskStatus(req.body.status, req.params.taskId!, req.params.projectId!);
 
             if(!task){
                 res.json({
@@ -90,7 +90,7 @@ export class TaskController {
 
     updateTask = async (req: Request<ReqParams, {}, TaskType>, res: Response, next: NextFunction) => {
         try{
-            const task = await TaskService.updateTask(req.body, req.params.taskId, req.params.projectId);
+            const task = await TaskService.updateTask(req.body, req.params.taskId!, req.params.projectId!);
 
             if(!task){
                 res.json({
@@ -110,12 +110,12 @@ export class TaskController {
     
     deleteTask = async(req: Request<ReqParams>, res: Response, next: NextFunction) => {
         try{
-            const task = await TaskService.deleteTask(req.params.taskId, req.params.projectId);
+            const task = await TaskService.deleteTask(req.params.taskId!, req.params.projectId!);
 
             if(!task){
                 res.json({
                     success: false,
-                    message:"Cant find task with this id",
+                    message:"Cant find task with this Id!",
                 }).status(500);
             }
 

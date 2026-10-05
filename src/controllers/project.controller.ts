@@ -48,6 +48,11 @@ export class ProjectController {
             if(!addedProject){
                 throw new Error("Cant create a new project");
             }
+
+            res.json({
+                success: true,
+                project: addedProject,
+            }).status(200);
         } catch (e){
             next(e)
         }
