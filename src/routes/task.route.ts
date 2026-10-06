@@ -16,7 +16,7 @@ taskRouter
     )
 
 taskRouter
-    .route("/:taskId")
+    .route("/tasks/:taskId")
     .get(taskController.getTask)
     .patch(
         validateBody(patchTask),

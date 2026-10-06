@@ -14,14 +14,11 @@ projectRouter
         validateBody(projectSchema),
         projectController.addProject
     )
-    .delete(projectController.deleteById)
 
 projectRouter
     .route("/:projectId")
     .get(projectController.getById)
-    .delete(
-        validateBody(projectId),
+    .delete(projectController.deleteById)
 
-    )
 
 export default projectRouter;

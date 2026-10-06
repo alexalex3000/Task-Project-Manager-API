@@ -1,0 +1,711 @@
+{
+  "info": {
+    "_postman_id": "a4899948-de7b-406d-89b5-5a4c5b351ad6",
+    "name": "Project/Task api responses",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58668324",
+    "_collection_link": "https://go.postman.co/collection/58668324-a4899948-de7b-406d-89b5-5a4c5b351ad6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "Get all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Get all",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/projects",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1375"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"55f-VhhpsG2w/iw76lHPfo5nYgsVTZA\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:10:49 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"project\": [\n    {\n      \"id\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n      \"title\": \"Новый веб-портал\",\n      \"description\": \"Разработка клиентского сервиса\",\n      \"createdAt\": \"2026-10-05T10:00:00.000Z\",\n      \"tasks\": []\n    },\n    {\n      \"id\": \"2037778e-31ae-43c3-b2c8-5819991aed2b\",\n      \"title\": \"Новый веб-портал\",\n      \"description\": \"Разработка клиентского сервиса\",\n      \"createdAt\": \"2026-10-05T10:00:00.000Z\",\n      \"tasks\": []\n    },\n    {\n      \"id\": \"dd6fa80a-195b-405b-98a0-11a8371564c3\",\n      \"title\": \"Poasf\",\n      \"description\": \"Разработка клиентского сервиса\",\n      \"createdAt\": \"2026-10-05T10:00:00.000Z\",\n      \"tasks\": [\n        {\n          \"id\": \"9f5d7850-5905-40d9-8ab5-345aa6f0a648\",\n          \"projectId\": \"dd6fa80a-195b-405b-98a0-11a8371564c3\",\n          \"title\": \"Настроить авторизацию\",\n          \"status\": \"review\",\n          \"priority\": \"high\",\n          \"assignedTo\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n          \"dueDate\": \"2026-10-15T18:00:00.000Z\",\n          \"createdAt\": \"2026-10-05T19:17:20.275Z\"\n        }\n      ]\n    },\n    {\n      \"id\": \"926ded54-933a-4b0c-b612-3627bcb28c29\",\n      \"title\": \"Новый веб-портал\",\n      \"description\": \"Разработка клиентского сервиса\",\n      \"createdAt\": \"2026-10-05T10:00:00.000Z\",\n      \"tasks\": []\n    },\n    {\n      \"id\": \"44269273-2ee4-4a54-ae75-7b0b69576592\",\n      \"title\": \"Новый веб-портал\",\n      \"description\": \"Разработка клиентского сервиса\",\n      \"createdAt\": \"2026-10-05T10:00:00.000Z\",\n      \"tasks\": []\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add project",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Add project",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Новый веб-портал\",\r\n    \"description\": \"Разработка клиентского сервиса\",\r\n    \"createdAt\": \"2026-10-05T10:00:00.000Z\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/projects",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "227"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"e3-2gt4cC7IQAnvON4VumLRaKdLz5A\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:10:12 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"project\": {\n    \"id\": \"44269273-2ee4-4a54-ae75-7b0b69576592\",\n    \"title\": \"Новый веб-портал\",\n    \"description\": \"Разработка клиентского сервиса\",\n    \"createdAt\": \"2026-10-05T10:00:00.000Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete project",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Delete project",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/projects/2037778e-31ae-43c3-b2c8-5819991aed2b",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2037778e-31ae-43c3-b2c8-5819991aed2b"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "67"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"43-unOAJk3z/se3irGJhQqw4muV3zE\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:12:03 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"projectId\": \"2037778e-31ae-43c3-b2c8-5819991aed2b\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get project",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Get project",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/projects/2e5433e9-cb09-463c-bf42-09b1396f5036",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2e5433e9-cb09-463c-bf42-09b1396f5036"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "227"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"e3-hrZfKWh7xdyAjzeHm+QM3s56Wos\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:12:23 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"project\": {\n    \"id\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n    \"title\": \"Новый веб-портал\",\n    \"description\": \"Разработка клиентского сервиса\",\n    \"createdAt\": \"2026-10-05T10:00:00.000Z\"\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "item": [
+        {
+          "name": "Get all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Get all",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/projects/2e5433e9-cb09-463c-bf42-09b1396f5036/tasks",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2e5433e9-cb09-463c-bf42-09b1396f5036",
+                    "tasks"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1137"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"471-UaNyjA11bw4gCLVhjlypnxwJZF0\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:29:56 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"tasks\": [\n    {\n      \"id\": \"1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd\",\n      \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n      \"title\": \"New task\",\n      \"status\": \"todo\",\n      \"priority\": \"low\",\n      \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n      \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n      \"createdAt\": \"2026-10-06T06:27:58.803Z\"\n    },\n    {\n      \"id\": \"9f76e397-25d5-4d2b-b4bc-49b4ce622bdc\",\n      \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n      \"title\": \"New task1\",\n      \"status\": \"todo\",\n      \"priority\": \"low\",\n      \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n      \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n      \"createdAt\": \"2026-10-06T06:29:22.201Z\"\n    },\n    {\n      \"id\": \"c6dff4ce-6f78-4e7a-bad6-1c66b43749c9\",\n      \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n      \"title\": \"New task2\",\n      \"status\": \"todo\",\n      \"priority\": \"low\",\n      \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n      \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n      \"createdAt\": \"2026-10-06T06:29:25.930Z\"\n    },\n    {\n      \"id\": \"13a92acc-2586-49d8-aad4-5dc435222add\",\n      \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n      \"title\": \"New task2\",\n      \"status\": \"todo\",\n      \"priority\": \"low\",\n      \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n      \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n      \"createdAt\": \"2026-10-06T06:29:50.876Z\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add task",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Add task",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"New task\",\r\n    \"status\": \"todo\",\r\n    \"priority\": \"low\",\r\n    \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\r\n    \"dueDate\": \"2026-10-06T08:24:00.000Z\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/projects/2e5433e9-cb09-463c-bf42-09b1396f5036/tasks",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2e5433e9-cb09-463c-bf42-09b1396f5036",
+                    "tasks"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "300"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"12c-FzOT0i+JkLwLh1KqeerxE6+Z568\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:27:58 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"task\": {\n    \"id\": \"1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd\",\n    \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n    \"title\": \"New task\",\n    \"status\": \"todo\",\n    \"priority\": \"low\",\n    \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n    \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n    \"createdAt\": \"2026-10-06T06:27:58.803Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get task",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Get task",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/projects/2e5433e9-cb09-463c-bf42-09b1396f5036/tasks/1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2e5433e9-cb09-463c-bf42-09b1396f5036",
+                    "tasks",
+                    "1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "300"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"12c-FzOT0i+JkLwLh1KqeerxE6+Z568\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:28:50 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"task\": {\n    \"id\": \"1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd\",\n    \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n    \"title\": \"New task\",\n    \"status\": \"todo\",\n    \"priority\": \"low\",\n    \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n    \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n    \"createdAt\": \"2026-10-06T06:27:58.803Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Change status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Change status",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"status\": \"done\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/projects/2e5433e9-cb09-463c-bf42-09b1396f5036/tasks/1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2e5433e9-cb09-463c-bf42-09b1396f5036",
+                    "tasks",
+                    "1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "300"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"12c-qxU/A12bc82f8ZFA7u10vLVbdKw\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:31:21 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"task\": {\n    \"id\": \"1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd\",\n    \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n    \"title\": \"New task\",\n    \"status\": \"done\",\n    \"priority\": \"low\",\n    \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n    \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n    \"createdAt\": \"2026-10-06T06:27:58.803Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete task",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Delete task",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseURL}}/projects/2e5433e9-cb09-463c-bf42-09b1396f5036/tasks/1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2e5433e9-cb09-463c-bf42-09b1396f5036",
+                    "tasks",
+                    "1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "300"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"12c-qxU/A12bc82f8ZFA7u10vLVbdKw\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:32:25 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"task\": {\n    \"id\": \"1aa0e0f5-66eb-4d1d-89ff-9e8b05c51ffd\",\n    \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n    \"title\": \"New task\",\n    \"status\": \"done\",\n    \"priority\": \"low\",\n    \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n    \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n    \"createdAt\": \"2026-10-06T06:27:58.803Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Change task",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Change task",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"New task\",\r\n    \"status\": \"todo\",\r\n    \"priority\": \"low\",\r\n    \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\r\n    \"dueDate\": \"2026-10-06T08:24:00.000Z\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseURL}}/projects/2e5433e9-cb09-463c-bf42-09b1396f5036/tasks/13a92acc-2586-49d8-aad4-5dc435222add",
+                  "host": [
+                    "{{baseURL}}"
+                  ],
+                  "path": [
+                    "projects",
+                    "2e5433e9-cb09-463c-bf42-09b1396f5036",
+                    "tasks",
+                    "13a92acc-2586-49d8-aad4-5dc435222add"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "300"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"12c-X+OdZQj79Nz/D1fBXarIcuHw9oE\""
+                },
+                {
+                  "key": "date",
+                  "value": "Tue, 06 Oct 2026 06:34:31 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"task\": {\n    \"id\": \"13a92acc-2586-49d8-aad4-5dc435222add\",\n    \"projectId\": \"2e5433e9-cb09-463c-bf42-09b1396f5036\",\n    \"title\": \"New task\",\n    \"status\": \"todo\",\n    \"priority\": \"low\",\n    \"assignedTo\": \"b2c3d4e5-f6a7-8901-bcde-2345678901ab\",\n    \"dueDate\": \"2026-10-06T08:24:00.000Z\",\n    \"createdAt\": \"2026-10-06T06:29:50.876Z\"\n  }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    }
+  ]
+}
