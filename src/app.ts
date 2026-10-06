@@ -1,4 +1,4 @@
-import express from 'express';
+import express, {NextFunction, Request, Response} from 'express';
 import projectRouter from "./routes/project.route.js";
 import {errorMiddlware} from "./middleware/error.middleware";
 import taskRouter from "./routes/task.route";
@@ -9,6 +9,11 @@ app.use(express.json())
 
 app.use("/api/v1/projects", projectRouter);
 app.use("/api/v1/projects/:projectId", taskRouter);
+
+app.use((req: Request, res: Response) => {
+    res.status(404).send({error: `Path ${req.originalUrl} not found
+    `});
+})
 
 app.use(errorMiddlware)
 

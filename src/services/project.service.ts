@@ -5,9 +5,11 @@ import {ProjectType} from "../model/project.type";
 
 export class ProjectService {
     static async getAll(){
-        const res = await db
-            .select()
-            .from(projectSchema)
+        const res = await db.query.projectSchema.findMany({
+            with: {
+                tasks: true
+            }
+        })
 
         return res ?? null;
     }
