@@ -7,6 +7,7 @@ RUN npm ci
 
 COPY tsconfig.json tsup.config.ts ./
 COPY src ./src
+COPY drizzle ./drizzle
 
 RUN npm run build
 
@@ -21,6 +22,7 @@ COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/drizzle ./drizzle
 
 USER node
 
