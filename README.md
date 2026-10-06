@@ -69,3 +69,7 @@ A pre-configured Postman collection is included in this repository to help you t
 3. Set up the collection variables:
    - `baseUrl`: `http://localhost:3000/api/v1`
 4. Run requests in sequential order.
+
+
+
+This project is licensed under the MIT License. Copyright (c) Alexey Petrykevitch
