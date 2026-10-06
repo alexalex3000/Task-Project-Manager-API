@@ -38,10 +38,10 @@ Nested endpoints using Express `mergeParams: true` to scope tasks under a specif
 | :--- | :--- | :--- | :--- |
 | `GET` | `/api/v1/projects/:projectId/tasks` | Get all tasks for a project | — |
 | `POST` | `/api/v1/projects/:projectId/tasks` | Add a new task to a project | `taskSchema` |
-| `GET` | `/api/v1/projects/:projectId/:taskId` | Get task details by ID | — |
-| `PATCH` | `/api/v1/projects/:projectId/:taskId` | Update task status | `patchTask` |
-| `PUT` | `/api/v1/projects/:projectId/:taskId` | Update full task details | `taskSchema` |
-| `DELETE` | `/api/v1/projects/:projectId/:taskId` | Delete a task | — |
+| `GET` | `/api/v1/projects/:projectId/tasks/:taskId` | Get task details by ID | — |
+| `PATCH` | `/api/v1/projects/:projectId/tasks/:taskId` | Update task status | `patchTask` |
+| `PUT` | `/api/v1/projects/:projectId/tasks/:taskId` | Update full task details | `taskSchema` |
+| `DELETE` | `/api/v1/projects/:projectId/tasks/:taskId` | Delete a task | — |
 
 ## 3. Response types 
 
